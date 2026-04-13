@@ -19,11 +19,6 @@ input sz data - find average inertia - input 21mer data - divide 21mer data into
 for every slice do kMean based on decided average inertia
 '''
 
-desktop_path = os.path.expanduser("~/Desktop")
-test_path = desktop_path + "/research project/NN result/model_diff/test/"
-model_path = r'C:\Users\Xiao\Desktop\research project\NN result\model_diff\6-31++g(d,p)\min shift\test model/'
-
-
 def Mini_batch(datapoints, weight, number_of_cluster, print_time=True, init='k-means++'):
     time_ = time.time()
     clustering = (MiniBatchKMeans(random_state=200, batch_size=10000, n_clusters=number_of_cluster, n_init='auto',
@@ -131,9 +126,7 @@ def main(x_t, y_t, x, y, model_dict, param_dict, radius, avg_inertia, iD, num_at
          ):
     transfer_order = []
     transfer_order_list = []
-    #x, y = input_data(sys_name, num_atom, transfer_fragment=trans_frag, basis='++') # target model data: w21h
 
-    #model_dict = load_model([num_atom], model_path=model_path)
     x_range, x_min = param_dict[direction+"%s" % str(iD) + "px"]
     y_range, y_min = param_dict[direction+"%s" % str(iD) + "py"]
     e_range, e_min = param_dict[direction+"%s" % str(iD) + "sy"]
@@ -164,7 +157,7 @@ def main(x_t, y_t, x, y, model_dict, param_dict, radius, avg_inertia, iD, num_at
                 slice_list = np.append([radius], slice_list)
             slice_list = np.append(slice_list, [di2m + 0.1])
             radius = None
-        b_p = []                           slice_list, file_save_path=file_save_path, b_p=b_p)
+        b_p = []                           
         slice_1 = np.asarray(np.where((dist2 < slice_list[0]) == True))
         for i in range(len(slice_list) - 1):
             time_ = time.time()
