@@ -5,6 +5,7 @@ from scipy import spatial
 from fragment_modeling.transfer import (distance_to_centers, online_expansion,
                        clustering_sequential, clustering_match, Mini_batch)
 
+from sklearn.cluster import MiniBatchKMeans
 
 # ═════════════════════════════════════════════════════════════════════════════
 # Fixtures
