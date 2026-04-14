@@ -1,5 +1,5 @@
 import numpy as np
-import fragment_transform
+from fragment_modeling import fragment_transform
 from scipy.spatial import distance
 
 
