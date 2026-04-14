@@ -1,5 +1,5 @@
 import numpy as np
-import fragment_transform
+from fragment_modeling import fragment_transform
 from scipy.spatial import distance
 
 
@@ -8,8 +8,10 @@ def load_force_input(frag_name, file_path):
     for direction in ['x', 'y', 'z']:
         for ty in ['d','f']:
             train_dict[direction + ty] = []
-    atom_num = np.loadtxt(file_path+f'{frag_name}atn.txt')
+    atom_num = np.loadtxt(file_path+f'{frag_name}atn.txt', ndmin=2)
+
     num_atom = len(atom_num[0])
+
 
     xyz_a = np.loadtxt(file_path+f'{frag_name}_train_xyz.txt').reshape(-1)
     xyz_a = xyz_a.reshape([int(len(xyz_a)/3/num_atom),num_atom,3])

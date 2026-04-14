@@ -110,8 +110,8 @@ class TestLoadForceInputExpected:
 
     def test_full_dict_matches_expected(self, tmp_path):
         """All keys in train_dict should match EXPECTED for the two-water case."""
-        self._write_two_water_files(tmp_path, 'H2O')
-        result = load_force_input('H2O', str(tmp_path) + '/')
+        self._write_two_water_files(tmp_path, 'H4O2')
+        result = load_force_input('H4O2', str(tmp_path) + '/')
 
         for direction in ['x', 'y', 'z']:
             np.testing.assert_allclose(
