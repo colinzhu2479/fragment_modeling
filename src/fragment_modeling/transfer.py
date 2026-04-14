@@ -157,7 +157,7 @@ def main(x_t, y_t, x, y, model_dict, param_dict, radius, avg_inertia, iD, num_at
                 slice_list = np.append([radius], slice_list)
             slice_list = np.append(slice_list, [di2m + 0.1])
             radius = None
-        b_p = []                           
+        b_p = []
         slice_1 = np.asarray(np.where((dist2 < slice_list[0]) == True))
         for i in range(len(slice_list) - 1):
             time_ = time.time()
