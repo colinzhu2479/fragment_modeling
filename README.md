@@ -6,6 +6,13 @@ A machine learning pipeline for training and deploying neural network models of 
 
 We aim to integrate graph representation (graph theoretic fragmentation) of molecules with machine learning to significantly reduce the computational cost for training samples and neural network model complexity together with training epochs. With graph representation, exploration of new regions of data space, or more specifically, potential energy configuration space is carried out by constructing a series of localized, lower-dimensional fragment (subsystem) spaces. 
 
+More information can be found in:
+1. Xiao Zhu, S. S. Iyengar. Graph theoretic molecular fragmentation methods for electronic potential energy surfaces augmented by machine learning. Journal of Chemical Theory and Computation. 18, 5125 (2022). DOI: https://doi.org/10.1021/acs.jctc.1c01241
+
+2. Timothy C. Ricard, Xiao Zhu, S. S. Iyengar. Capturing weak interactions in surface adsorbate systems at coupled cluster accuracy: a graph-theoretic molecular fragmentation approach improved through machine learning. Journal of Chemical Theory and Computation. 19, 8541 (2023). DOI: https://doi.org/10.1021/acs.jctc.3c00955
+
+3. Xiao Zhu, S. S. Iyengar. Large Language Model-Type Architecture for High-Dimensional Molecular Potential Energy Surfaces. Physics Review X ,16 , 011012 (2026). DOI: https://doi.org/10.1103/2qcy-8n8g
+
 ## Package Structure
 
 ```
