@@ -5,6 +5,9 @@ import tensorflow as tf
 from scipy import spatial
 from tensorflow import keras
 import os
+from fragment_modeling.fragment_transform import *
+from scipy.spatial import distance
+
 
 def load_energy_model(num_atom_list, model_path_root):
     tf.get_logger().setLevel('ERROR')
@@ -99,7 +102,7 @@ def predict_force(atomic_num, xyz, partition_index, model_dict, param_dict, frag
         '''need a global permutation information'''
         reconstructed_force = np.zeros([3, len(partition_ar)])
 
-        for c, ii in enumerate(fragment_transform.global_transform_fragment(xyz_t, force, partition_ar,
+        for c, ii in enumerate(global_transform_fragment(xyz_t, force, partition_ar,
                                                                             atomic_mass, ref)):
 
             xyz_tt, force, partition_ar, v, order = ii
