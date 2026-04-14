@@ -11,7 +11,7 @@ def load_force_input(frag_name, file_path):
     atom_num = np.loadtxt(file_path+f'{frag_name}atn.txt')
     try:
         num_atom = len(atom_num[0])
-    else:
+    except:
         num_atom = len(atom_num)
 
     xyz_a = np.loadtxt(file_path+f'{frag_name}_train_xyz.txt').reshape(-1)
