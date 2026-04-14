@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
-from transfer_server.model_init import *
+from fragment_modeling.model_init import *
 # ═════════════════════════════════════════════════════════════════════════════
 # Fixtures
 # ═════════════════════════════════════════════════════════════════════════════
