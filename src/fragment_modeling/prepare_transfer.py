@@ -9,7 +9,10 @@ def load_force_input(frag_name, file_path):
         for ty in ['d','f']:
             train_dict[direction + ty] = []
     atom_num = np.loadtxt(file_path+f'{frag_name}atn.txt')
-    num_atom = len(atom_num[0])
+    try:
+        num_atom = len(atom_num[0])
+    else:
+        num_atom = len(atom_num)
 
     xyz_a = np.loadtxt(file_path+f'{frag_name}_train_xyz.txt').reshape(-1)
     xyz_a = xyz_a.reshape([int(len(xyz_a)/3/num_atom),num_atom,3])

@@ -35,7 +35,7 @@ class TestDistanceToCenters:
 
     def test_exact_match_returns_zero_distance(self, grid_points):
         """Querying a point that exists in x should give distance 0."""
-        dist, order = distance_to_centers(grid_points, grid_points[0])
+        dist, order = distance_to_centers(grid_points, [grid_points[0]])
         assert dist[0] == pytest.approx(0.0)
         assert order[0] == 0
 
@@ -47,7 +47,7 @@ class TestDistanceToCenters:
 
     def test_returns_nearest_not_farthest(self, grid_points):
         """Nearest neighbour to [0,0] in the grid should be itself (index 0)."""
-        dist, order = distance_to_centers(grid_points, np.array([[0., 0.]]))
+        dist, order = distance_to_centers(grid_points, [grid_points[0]])
         assert order[0] == 0
 
     def test_output_length_matches_query(self, grid_points):
